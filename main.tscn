@@ -37,5 +37,30 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 1.6
 [node name="Camera3D" parent="Player/Target" index="0"]
 transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0, 0.5, 2.5)
 
+[node name="Skeleton3D" parent="Player/Player/Skeleton" index="0"]
+bones/4/rotation = Quaternion(-6.68558e-09, 0.996325, -0.0856503, -4.31534e-07)
+bones/4/scale = Vector3(1, 1, 1)
+bones/5/scale = Vector3(1, 1, 1)
+bones/6/rotation = Quaternion(0.559343, -0.432591, 0.559343, 0.432591)
+bones/6/scale = Vector3(1, 1, 1)
+bones/7/rotation = Quaternion(-0.00141141, 4.98967e-08, -8.03137e-10, 0.999999)
+bones/8/scale = Vector3(1, 1, 1)
+bones/9/scale = Vector3(1, 1, 1)
+bones/10/scale = Vector3(1, 1, 1)
+bones/12/scale = Vector3(1.00002, 1, 1)
+bones/13/scale = Vector3(1, 1, 1)
+bones/14/scale = Vector3(1, 1, 1)
+bones/15/scale = Vector3(1.00002, 1, 1)
+bones/16/scale = Vector3(1, 1, 1)
+bones/17/scale = Vector3(1, 1, 1)
+bones/18/rotation = Quaternion(1, -1.01905e-13, 7.54979e-08, -1.42109e-14)
+bones/21/scale = Vector3(1, 1, 1)
+bones/22/rotation = Quaternion(-1.06467e-07, -0.707107, 0.707107, 3.09086e-08)
+bones/22/scale = Vector3(1, 1, 1)
+bones/23/scale = Vector3(1, 1, 1)
+bones/24/scale = Vector3(1, 1, 1)
+bones/25/rotation = Quaternion(0.707107, -3.06266e-07, -3.06266e-07, 0.707107)
+bones/26/rotation = Quaternion(0.707107, -3.06266e-07, -3.06266e-07, 0.707107)
+
 [editable path="Player"]
 [editable path="Player/Player"]

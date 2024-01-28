@@ -6,8 +6,9 @@ var mouse_sensitivity = 0.1
 # 摄像机与目标点（玩家）之间的距离
 var distance_to_target = 5.0
 
-# 旋转角度
+# 旋转角度（偏航角）
 var yaw = 0.0
+# 旋转角度（俯仰角）
 var pitch = 0.0
 
 func _ready():
@@ -17,11 +18,11 @@ func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func _input(event):
+	# 处理鼠标输入
 	if event is InputEventMouseMotion:
-		# 处理鼠标输入
 		yaw += -event.relative.x * mouse_sensitivity
 		pitch += -event.relative.y * mouse_sensitivity
-		pitch = clamp(pitch, -90, 90) # 防止过度旋转
+		pitch = clamp(pitch, -90, 10) # 防止过度旋转
 	
 	if Input.is_action_pressed("exit"):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)

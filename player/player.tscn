@@ -8,7 +8,7 @@
 radius = 0.4
 height = 2.1
 
-[sub_resource type="Animation" id="Animation_2kn57"]
+[sub_resource type="Animation" id="Animation_5ielu"]
 resource_name = "falling"
 length = 0.433333
 loop_mode = 1
@@ -223,7 +223,7 @@ tracks/29/interp = 1
 tracks/29/loop_wrap = true
 tracks/29/keys = PackedFloat32Array(0, 1, 0.720784, 0.0117189, 0.0419352, 0.691791)
 
-[sub_resource type="Animation" id="Animation_elxgs"]
+[sub_resource type="Animation" id="Animation_bcl32"]
 resource_name = "idle"
 length = 1.23333
 loop_mode = 1
@@ -438,7 +438,7 @@ tracks/29/interp = 1
 tracks/29/loop_wrap = true
 tracks/29/keys = PackedFloat32Array(0, 1, 5.64473e-07, 6.35228, 5.79659)
 
-[sub_resource type="Animation" id="Animation_mg7mp"]
+[sub_resource type="Animation" id="Animation_yjyeu"]
 resource_name = "jump"
 length = 0.433333
 tracks/0/type = "position_3d"
@@ -652,7 +652,7 @@ tracks/29/interp = 1
 tracks/29/loop_wrap = true
 tracks/29/keys = PackedFloat32Array(0, 1, -6.07222e-07, 0.00400469, -1e-06)
 
-[sub_resource type="Animation" id="Animation_hhr02"]
+[sub_resource type="Animation" id="Animation_w2rk5"]
 resource_name = "RESET"
 length = 0.001
 tracks/0/type = "position_3d"
@@ -866,7 +866,7 @@ tracks/29/interp = 1
 tracks/29/loop_wrap = true
 tracks/29/keys = PackedFloat32Array(0, 1, 0.720784, 0.0117189, 0.0419352, 0.691791)
 
-[sub_resource type="Animation" id="Animation_lexc6"]
+[sub_resource type="Animation" id="Animation_7k1cc"]
 resource_name = "run"
 length = 0.833333
 loop_mode = 1
@@ -1081,7 +1081,7 @@ tracks/29/interp = 1
 tracks/29/loop_wrap = true
 tracks/29/keys = PackedFloat32Array(0, 1, -6.07222e-07, 0.00400469, -1e-06)
 
-[sub_resource type="Animation" id="Animation_itekl"]
+[sub_resource type="Animation" id="Animation_pyaxx"]
 resource_name = "shooting"
 length = 0.433333
 tracks/0/type = "position_3d"
@@ -1295,7 +1295,7 @@ tracks/29/interp = 1
 tracks/29/loop_wrap = true
 tracks/29/keys = PackedFloat32Array(0, 1, -6.07222e-07, 0.00400469, -1e-06)
 
-[sub_resource type="Animation" id="Animation_7d1qj"]
+[sub_resource type="Animation" id="Animation_bm0vm"]
 resource_name = "shooting_standing"
 length = 0.433333
 tracks/0/type = "position_3d"
@@ -1509,7 +1509,7 @@ tracks/29/interp = 1
 tracks/29/loop_wrap = true
 tracks/29/keys = PackedFloat32Array(0, 1, 3.0565e-08, 1.2429, 0.270995)
 
-[sub_resource type="Animation" id="Animation_pjpo0"]
+[sub_resource type="Animation" id="Animation_2qoei"]
 resource_name = "walk"
 length = 1.03333
 loop_mode = 1
@@ -1724,16 +1724,16 @@ tracks/29/interp = 1
 tracks/29/loop_wrap = true
 tracks/29/keys = PackedFloat32Array(0, 1, -6.07222e-07, 0.00400469, -1e-06)
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_a0hrt"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2cumq"]
 _data = {
-"RESET": SubResource("Animation_hhr02"),
-"falling": SubResource("Animation_2kn57"),
-"idle": SubResource("Animation_elxgs"),
-"jump": SubResource("Animation_mg7mp"),
-"run": SubResource("Animation_lexc6"),
-"shooting": SubResource("Animation_itekl"),
-"shooting_standing": SubResource("Animation_7d1qj"),
-"walk": SubResource("Animation_pjpo0")
+"RESET": SubResource("Animation_w2rk5"),
+"falling": SubResource("Animation_5ielu"),
+"idle": SubResource("Animation_bcl32"),
+"jump": SubResource("Animation_yjyeu"),
+"run": SubResource("Animation_7k1cc"),
+"shooting": SubResource("Animation_pyaxx"),
+"shooting_standing": SubResource("Animation_bm0vm"),
+"walk": SubResource("Animation_2qoei")
 }
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_tu4ay"]
@@ -1837,14 +1837,18 @@ bones/16/scale = Vector3(1, 1, 1)
 bones/17/rotation = Quaternion(0.720784, 0.0117189, 0.0419352, 0.691791)
 bones/17/scale = Vector3(1, 1, 1)
 bones/18/rotation = Quaternion(1, -1.01905e-13, 7.54979e-08, -1.42109e-14)
+bones/21/scale = Vector3(1, 1, 1)
 bones/22/rotation = Quaternion(-1.06467e-07, -0.707107, 0.707107, 3.09086e-08)
+bones/22/scale = Vector3(1, 1, 1)
+bones/23/scale = Vector3(1, 1, 1)
+bones/24/scale = Vector3(1, 1, 1)
 bones/25/rotation = Quaternion(0.707107, -3.06266e-07, -3.06266e-07, 0.707107)
 bones/26/rotation = Quaternion(0.707107, -3.06266e-07, -3.06266e-07, 0.707107)
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
 root_node = NodePath("../Player")
 libraries = {
-"": SubResource("AnimationLibrary_a0hrt")
+"": SubResource("AnimationLibrary_2cumq")
 }
 tree_root = SubResource("AnimationNodeBlendTree_loyjl")
 anim_player = NodePath("../Player/AnimationPlayer")
