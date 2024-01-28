@@ -1,28 +1,31 @@
+# 定义一个名为Player的类，继承自CharacterBody3D
 class_name Player extends CharacterBody3D
 
-
+# 定义一个枚举，用于表示角色的动画状态：地面和空中
 enum _Anim {
-	FLOOR,
-	AIR,
+	FLOOR,  # 地面状态
+	AIR,    # 空中状态
 }
 
-const SHOOT_TIME = 1.5
-const SHOOT_SCALE = 2.0
-const CHAR_SCALE = Vector3(0.3, 0.3, 0.3)
-const MAX_SPEED = 6.0
-const TURN_SPEED = 40.0
-const JUMP_VELOCITY = 12.5
-const BULLET_SPEED = 20.0
-const AIR_IDLE_DEACCEL = false
-const ACCEL = 14.0
-const DEACCEL = 14.0
-const AIR_ACCEL_FACTOR = 0.5
-const SHARP_TURN_THRESHOLD = deg_to_rad(140.0)
+# 定义一些常量
+const SHOOT_TIME = 1.5  # 射击时间间隔
+const SHOOT_SCALE = 2.0  # 射击缩放比例
+const CHAR_SCALE = Vector3(0.3, 0.3, 0.3)  # 角色缩放比例
+const MAX_SPEED = 6.0  # 最大速度
+const TURN_SPEED = 40.0  # 转弯速度
+const JUMP_VELOCITY = 12.5  # 跳跃速度
+const BULLET_SPEED = 20.0  # 子弹速度
+const AIR_IDLE_DEACCEL = false  # 空中是否减速，这里是不减速
+const ACCEL = 14.0  # 加速度
+const DEACCEL = 14.0  # 减速度
+const AIR_ACCEL_FACTOR = 0.5  # 空中加速因子
+const SHARP_TURN_THRESHOLD = deg_to_rad(140.0)  # 尖锐转弯的阈值，将角度转换为弧度
 
-var movement_dir := Vector3()
-var jumping := false
-var prev_shoot := false
-var shoot_blend := 0.0
+# 定义一些变量
+var movement_dir := Vector3()  # 移动方向
+var jumping := false  # 是否正在跳跃
+var prev_shoot := false  # 上一次是否射击
+var shoot_blend := 0.0  # 射击混合值，用于动画过渡
 
 # Number of coins collected.
 var coins := 0
