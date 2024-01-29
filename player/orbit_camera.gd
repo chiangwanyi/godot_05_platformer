@@ -1,10 +1,19 @@
 extends Camera3D
 
 # 初始化参数
-@export var radius = 5.0  # 圆周运动的半径
+@export var min_radius = 1.0
+@export var shrink_speed = 10
+@export var grow_speed = shrink_speed
+@export var max_radius = 5.0
+@export var radius = max_radius  # 圆周运动的半径
 @export var mouse_sensitivity = 0.0025  # 鼠标灵敏度
+
+@export var character : CharacterBody3D
+
 var horizontal_angle = 0.0  # 水平方向的初始角度
 var vertical_angle = 0.0    # 垂直方向的初始角度
+
+
 
 func _ready():
 	set_process_input(true)
@@ -23,16 +32,30 @@ func _input(event):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
 func _physics_process(delta):
-	# 计算新位置
+	var target = (get_parent() as Node3D).global_transform.origin
+
+	# 创建 PhysicsRayQueryParameters3D 对象
+	var ray_query = PhysicsRayQueryParameters3D.new()
+	ray_query.from = global_transform.origin
+	ray_query.to = target
+
+	# 使用 PhysicsRayQueryParameters3D 对象进行射线检测
+	var space_state = get_world_3d().direct_space_state
+	var result = space_state.intersect_ray(ray_query)
+	
+	if (result.collider == character):
+		radius = max_radius
+	else:
+		radius -= delta * shrink_speed
+
+	# 确保 radius 在合理范围内
+	radius = clamp(radius, min_radius, max_radius)
+
+	# 根据新的 radius 计算摄像机位置
 	var x = radius * cos(vertical_angle) * sin(horizontal_angle)
 	var y = radius * sin(vertical_angle)
 	var z = radius * cos(vertical_angle) * cos(horizontal_angle)
-	
-	# 确定摄像机位置和旋转
-	var target = (get_parent() as Node3D).global_transform.origin
-	
-	# 设置摄像机位置
-	global_transform.origin = Vector3(x, y, z) + target
 
-	# 始终面向目标点
+	global_transform.origin = Vector3(x, y, z) + target
 	look_at(target, Vector3.UP)
+
