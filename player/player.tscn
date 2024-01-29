@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_e633q"]
 [ext_resource type="PackedScene" uid="uid://cns6d6po8hg0q" path="res://player/player.glb" id="1_qvuku"]
-[ext_resource type="Script" path="res://player/follow_camera_with_rotate.gd" id="2_wduhu"]
+[ext_resource type="Script" path="res://player/orbit_camera.gd" id="2_wduhu"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_68133"]
 radius = 0.4
