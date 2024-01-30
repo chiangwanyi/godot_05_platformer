@@ -1767,7 +1767,6 @@ animation = &"idle"
 [sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_tje8l"]
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_loyjl"]
-graph_offset = Vector2(-305.362, 25.8631)
 nodes/Animation/node = SubResource("AnimationNodeAnimation_ahkth")
 nodes/Animation/position = Vector2(-160, 40)
 "nodes/Animation 2/node" = SubResource("AnimationNodeAnimation_tu4ay")
@@ -1806,9 +1805,13 @@ shape = SubResource("CapsuleShape3D_68133")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.952, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Target" node_paths=PackedStringArray("character")]
-transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0, 2.6, 1.25)
 script = ExtResource("2_wduhu")
+min_radius = null
+shrink_speed = null
+max_radius = null
+mouse_sensitivity = null
 character = NodePath("../..")
+autoturn_ray_aperture = null
 
 [node name="Player" parent="." instance=ExtResource("1_qvuku")]
 
