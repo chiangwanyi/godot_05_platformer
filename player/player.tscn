@@ -8,7 +8,7 @@
 radius = 0.4
 height = 2.1
 
-[sub_resource type="Animation" id="Animation_qp6pl"]
+[sub_resource type="Animation" id="Animation_35b72"]
 resource_name = "falling"
 length = 0.433333
 loop_mode = 1
@@ -223,7 +223,7 @@ tracks/29/interp = 1
 tracks/29/loop_wrap = true
 tracks/29/keys = PackedFloat32Array(0, 1, 0.720784, 0.0117189, 0.0419352, 0.691791)
 
-[sub_resource type="Animation" id="Animation_8lksd"]
+[sub_resource type="Animation" id="Animation_fyept"]
 resource_name = "idle"
 length = 1.23333
 loop_mode = 1
@@ -438,7 +438,7 @@ tracks/29/interp = 1
 tracks/29/loop_wrap = true
 tracks/29/keys = PackedFloat32Array(0, 1, 5.64473e-07, 6.35228, 5.79659)
 
-[sub_resource type="Animation" id="Animation_p6f2o"]
+[sub_resource type="Animation" id="Animation_6176s"]
 resource_name = "jump"
 length = 0.433333
 tracks/0/type = "position_3d"
@@ -652,7 +652,7 @@ tracks/29/interp = 1
 tracks/29/loop_wrap = true
 tracks/29/keys = PackedFloat32Array(0, 1, -6.07222e-07, 0.00400469, -1e-06)
 
-[sub_resource type="Animation" id="Animation_yat8o"]
+[sub_resource type="Animation" id="Animation_xhkp1"]
 resource_name = "RESET"
 length = 0.001
 tracks/0/type = "position_3d"
@@ -866,7 +866,7 @@ tracks/29/interp = 1
 tracks/29/loop_wrap = true
 tracks/29/keys = PackedFloat32Array(0, 1, 0.720784, 0.0117189, 0.0419352, 0.691791)
 
-[sub_resource type="Animation" id="Animation_67qjl"]
+[sub_resource type="Animation" id="Animation_nsmla"]
 resource_name = "run"
 length = 0.833333
 loop_mode = 1
@@ -1081,7 +1081,7 @@ tracks/29/interp = 1
 tracks/29/loop_wrap = true
 tracks/29/keys = PackedFloat32Array(0, 1, -6.07222e-07, 0.00400469, -1e-06)
 
-[sub_resource type="Animation" id="Animation_cq82e"]
+[sub_resource type="Animation" id="Animation_1mgm6"]
 resource_name = "shooting"
 length = 0.433333
 tracks/0/type = "position_3d"
@@ -1295,7 +1295,7 @@ tracks/29/interp = 1
 tracks/29/loop_wrap = true
 tracks/29/keys = PackedFloat32Array(0, 1, -6.07222e-07, 0.00400469, -1e-06)
 
-[sub_resource type="Animation" id="Animation_a810u"]
+[sub_resource type="Animation" id="Animation_emcx0"]
 resource_name = "shooting_standing"
 length = 0.433333
 tracks/0/type = "position_3d"
@@ -1509,7 +1509,7 @@ tracks/29/interp = 1
 tracks/29/loop_wrap = true
 tracks/29/keys = PackedFloat32Array(0, 1, 3.0565e-08, 1.2429, 0.270995)
 
-[sub_resource type="Animation" id="Animation_1qiva"]
+[sub_resource type="Animation" id="Animation_mi7qu"]
 resource_name = "walk"
 length = 1.03333
 loop_mode = 1
@@ -1724,16 +1724,16 @@ tracks/29/interp = 1
 tracks/29/loop_wrap = true
 tracks/29/keys = PackedFloat32Array(0, 1, -6.07222e-07, 0.00400469, -1e-06)
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_y5qnv"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_w37iy"]
 _data = {
-"RESET": SubResource("Animation_yat8o"),
-"falling": SubResource("Animation_qp6pl"),
-"idle": SubResource("Animation_8lksd"),
-"jump": SubResource("Animation_p6f2o"),
-"run": SubResource("Animation_67qjl"),
-"shooting": SubResource("Animation_cq82e"),
-"shooting_standing": SubResource("Animation_a810u"),
-"walk": SubResource("Animation_1qiva")
+"RESET": SubResource("Animation_xhkp1"),
+"falling": SubResource("Animation_35b72"),
+"idle": SubResource("Animation_fyept"),
+"jump": SubResource("Animation_6176s"),
+"run": SubResource("Animation_nsmla"),
+"shooting": SubResource("Animation_1mgm6"),
+"shooting_standing": SubResource("Animation_emcx0"),
+"walk": SubResource("Animation_mi7qu")
 }
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_tu4ay"]
@@ -1802,16 +1802,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.04975, 0)
 shape = SubResource("CapsuleShape3D_68133")
 
 [node name="Target" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.952, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.77395, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Target" node_paths=PackedStringArray("character")]
 script = ExtResource("2_wduhu")
-min_radius = null
-shrink_speed = null
-max_radius = null
-mouse_sensitivity = null
 character = NodePath("../..")
-autoturn_ray_aperture = null
 
 [node name="Player" parent="." instance=ExtResource("1_qvuku")]
 
@@ -1848,7 +1843,7 @@ bones/26/rotation = Quaternion(0.707107, -3.06266e-07, -3.06266e-07, 0.707107)
 [node name="AnimationTree" type="AnimationTree" parent="."]
 root_node = NodePath("../Player")
 libraries = {
-"": SubResource("AnimationLibrary_y5qnv")
+"": SubResource("AnimationLibrary_w37iy")
 }
 tree_root = SubResource("AnimationNodeBlendTree_loyjl")
 anim_player = NodePath("../Player/AnimationPlayer")

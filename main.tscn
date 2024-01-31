@@ -34,13 +34,5 @@ shadow_enabled = true
 [node name="Player" parent="." instance=ExtResource("1_fuyl3")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 1.6, 0)
 
-[node name="Camera3D" parent="Player/Target" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
-min_radius = 1.0
-shrink_speed = 10
-max_radius = 5.0
-mouse_sensitivity = 0.0025
-autoturn_ray_aperture = 25.0
-
 [editable path="Player"]
 [editable path="Player/Player"]
